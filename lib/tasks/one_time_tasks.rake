@@ -43,4 +43,9 @@ namespace :one_time_tasks do
     q.options.create(hazards: 'This is a test hazard', text: 'No')
     q.save
   end
+
+  task create_user: :environment do
+    u = User.new(email: 'admin_user@construction.com', password:'Password123#', password_confirmation:'Password123#')
+    u.save!
+  end
 end
