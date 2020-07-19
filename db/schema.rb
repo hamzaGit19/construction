@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_190721) do
   create_table "questions", force: :cascade do |t|
     t.string "text"
     t.string "category"
+    t.string "sub_category"
     t.string "view_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
