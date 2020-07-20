@@ -1,0 +1,133 @@
+.row-content {
+  padding: 10px 0px 50px 0px;
+  background: #0289C3;
+  color: white;
+}
+
+.home-container {
+  margin-top: 5%
+}
+
+.home-img {
+  width: 100%
+}
+
+.home-img-div {
+  padding: 0 !important
+}
+
+.assessemnt-btn-row {
+  margin-top: 5%;
+  padding: 10px 0px 50px 0px;
+}
+
+.custom-nav {
+  background: #0289C3;
+  a {
+    img {
+      width: 33px
+    }
+  }
+}
+
+.start-assessment-btn {
+  background: #0289C3;
+  color: white !important;
+  border-radius: 0px !important
+}
+
+.custom-question {
+  margin-top: 5%
+}
+
+.question-text {
+  background: #0289C3;
+  color: white;
+  padding: 10px 40px 10px 40px;
+}
+
+.question-options {
+  padding: 10px 40px 10px 40px;
+}
+
+.four { width: 32.26%; max-width: 32.26%;}
+
+/* COLUMNS */
+
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1.6%;
+}
+
+.col:first-of-type { margin-left: 0; }
+
+/* CLEARFIX */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* FORM */
+
+.form .plan input, .form .payment-plan input, .form .payment-type input{
+  display: none;
+}
+
+.form label{
+  position: relative;
+  color: #fff;
+  background-color: #aaa;
+  text-align: center;
+  height: 150px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.form .plan input:checked + label, .form .payment-plan input:checked + label, .form .payment-type input:checked + label{
+  border: 3px solid #333;
+  background-color: #0289C3;
+}
+
+.form .plan input:checked + label:after, form .payment-plan input:checked + label:after, .form .payment-type input:checked + label:after{
+  content: "\2713";
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100%;
+  border: 2px solid #333;
+  background-color: #2fcc71;
+  z-index: 999;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.submit-section {
+  margin-left: 25%;
+}
+
+.tab {
+  max-width: 25%
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    margin-top: 20%
+  }
+}
