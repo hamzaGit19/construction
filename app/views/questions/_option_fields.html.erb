@@ -1,0 +1,35 @@
+<div class='nested-fields'>
+  <%= f.inputs do %>
+    <div class="form-group">
+      <div class="input-group">
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3'>
+              <label class='form-control'>Option Name</label>
+            </div>
+            <div class='col-md-9'>
+              <%= f.text_field :text, :class =>'form-control'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3'>
+              <label class='form-control'>Description</label>
+            </div>
+            <div class='col-md-9'>
+              <%= f.text_field :hazards, :class =>'form-control'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <%= link_to_remove_association "remove task", f %>
+  <% end %>
+</div>
