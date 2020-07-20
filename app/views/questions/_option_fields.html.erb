@@ -28,6 +28,25 @@
         </div>
       </div>
     </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3'>
+              <label class='form-control'>Image</label>
+            </div>
+            <div class='col-md-9'>
+              <% if f.object.image.to_s.empty? %>
+                <%= f.file_field :image, label: "Upload a founder photo.", class: 'form-control' %>
+              <% else %>
+                <%= f.file_field :image, label: "Upload a founder photo.", class: 'form-control' %>
+                <%= image_tag f.object.image.to_s, class: 'small-10 medium-10 image-previewer', style: 'height:300px;width:600px;'%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <br>
     <br>
     <%= link_to_remove_association "remove task", f %>

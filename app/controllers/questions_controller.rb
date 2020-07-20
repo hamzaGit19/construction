@@ -43,6 +43,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:text, :category, options_attributes: [:id, :text, :hazards, :_destroy])
+      params.require(:question).permit(:text, :category, options_attributes: [:id, :text, :hazards,:image, :_destroy])
     end
 end
