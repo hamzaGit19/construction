@@ -1,30 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Questions</h1>
-
-
-<div class="">
-    <div class="row col-md-12">
-      <table class="table table-striped custab">
-        <thead>
-        <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
-            <tr>
+<div style='margin-bottom:5%;'>
+  <div class="row">
+      <div class="col-md-12">
+        <div class="well well-sm">
+          <table class="table table-striped custab">
+            <thead>
+              <tr>
                 <th>Question Text</th>
                 <th>Category</th>
                 <th>No. of options</th>
                 <th class="text-center">Manage</th>
-            </tr>
-        </thead>
-        <% @questions.each do |question| %>
-          <tr>
-            <td><%= question.text %></td>
-            <td><%= question.category %></td>
-            <td><%= question.options.count %></td>
-            <td class="text-center">
-              <%= link_to 'Edit', edit_question_path(question) %></td>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+              </tr>
+            </thead>
+            <% @questions.each do |question| %>
+              <tr>
+                <td><%= question.text %></td>
+                <td><%= question.category %></td>
+                <td><%= question.options.count %></td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_question_path(question) %></td>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
     </div>
+  </div>
 </div>
