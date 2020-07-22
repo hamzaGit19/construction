@@ -1,5 +1,5 @@
 <h5 class="card-header info-color white-text text-center py-4">
-<strong style='color:#0289C3'>ALL QUESTIONS</strong>
+  <strong style='color:white'>ALL QUESTIONS</strong>
 </h5>
 <div style='margin-bottom:5%;'>
   <div class="row">
@@ -20,7 +20,9 @@
                 <td><%= question.category %></td>
                 <td><%= question.options.count %></td>
                 <td class="text-center">
-                  <%= link_to 'Edit', edit_question_path(question) %></td>
+                  <%= link_to edit_question_path(question) do %>
+                    <i class="fa fa-cogs"></i>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
