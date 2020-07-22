@@ -6,7 +6,7 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #0289C3;
+  background: rgb(6, 68, 95);
   padding: 1em 2em;
   border: none;
   color: white !important;
@@ -28,9 +28,9 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle closest-side, #4405f7, transparent);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side,#0289C3, transparent);
+  -webkit-transform: translate(-60%, -60%);
+          transform: translate(-60%, -60%);
   transition: width .2s ease, height .2s ease;
 }
 .button:hover::before {

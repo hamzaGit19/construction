@@ -1,24 +1,11 @@
-<div class="container home-container">
-  <div class="row row-content">
-    <div class="col-12 col-sm-6">
-      <div class="row">
-        <div class="col-12">
-          <p>Preliminary investigation of Brownfield Sites</p>
-        </div>
-
-        <div class="col-12">
-          <p>The aim of this tool is to help</p>
-        </div>
-      </div>
+<section class="hero">
+    <div class="hero-content">
+       <h1 class="hero-title">
+            Discover the World
+       </h1>
+       <h2 class="hero-subtitle">
+            We offer the best testing and reporting services for your next site!
+       </h2>
+       <%= link_to 'Start your assessment!', new_assessment_path, class: 'navbar-brand button' %>
     </div>
-    <div class="col-12 col-sm-6 home-img-div">
-      <%= image_tag 'home.png', class: "home-img" %>
-    </div>
-  </div>
-
-  <div class="row assessemnt-btn-row justify-content-center">
-    <div class="col-auto">
-      <%= link_to 'Start Assessment', new_assessment_path, class: 'btn-lg start-assessment-btn' %>
-    </div>
-  </div>
-</div>
+</section>
