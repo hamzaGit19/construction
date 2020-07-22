@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("src/cocoon")
-require("src/navbar")
 require("@fortawesome/fontawesome-free/js/all")
 
 
