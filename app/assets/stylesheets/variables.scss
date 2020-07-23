@@ -1,0 +1,23 @@
+$bodyTextClr: #1f2532;
+$whiteClr: #fff;
+$borderClr: #b5bdce;
+$labelClr: #aab1b9;
+$borderClr: #c7c8c9;
+$roboto: Roboto;
+
+@mixin fontFace($family,$src) {
+  @font-face {
+    font-family: $family;
+    src: asset-url('#{$src}.eot'); // IE9 compat
+    src: asset-url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+    asset-url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+    asset-url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+  }
+}
+
+@include fontFace('Roboto','Roboto-Regular');
+
+.Roboto-Regular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}

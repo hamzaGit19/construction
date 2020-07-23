@@ -7,7 +7,7 @@ class Question < ApplicationRecord
 
     options_hash = {}
 
-    data.map { |question| options_hash[question.text.to_sym] = question.options.map { |option| [option.text] }.flatten if question.view_type == 'dropdown' }
+    data.map { |question| options_hash[question.text] = {type: question.view_type, options: question.options.map { |option| [option.text] }.flatten} }
 
     options_hash
   end

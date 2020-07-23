@@ -2,33 +2,53 @@
   <strong style='color:white'>NEW ASSESSMENT</strong>
 </h5>
 
-<div class="container home-container">
-  <div class="row row-content justify-content-center align-items-center">
-    <div class="col-auto">
-      A paragraph will be prepared
-    </div>
-  </div>
+<div class="container">
+  <div class="questions-area">
+    <div class="row">
+      <div class='col-xs-12 content-area'>
+        <div class="working-content-area">
+          <%= form_with url: assessments_path, method: :post do |f| %>
+            <% @options_hash.keys.each do |key| %>
+              <div class="form-group">
+                <div class="row">
+                  <div class="question-block">
+                    <% if @options_hash[key][:type] == "dropdown" %>
+                      <%= f.label key.to_sym, class: 'col-12 col-sm-5' %>
+                      <div class="col-12 col-sm-7">
+                        <%= f.select(key.to_sym, @options_hash[key][:options], { include_blank: false }, { class: 'form-control'}) %>
+                      </div>
+                    <% else %>
+                      <%= f.label key.to_sym, class: 'col-sm-4' %>
+                      <div class="col-md-8 col-sm-8 printer-view radio-question">
+                        <label class='custom-radio-check'>
+                          <%= f.radio_button key.to_sym, true %>
+                          <span class='checkmark'></span>
+                          Yes
+                        </label>
 
-  <div class="questions-container">
-    <% @options_hash.keys.each do |key| %>
-      <div class="custom-question">
-        <div class="row assessment-btn-row">
-          <div class="col-12 col-sm-3">
-            <div class="question-text">
-              <span><%= key %></span>
-            </div>
-          </div>
+                        <div class="radio-false">
+                          <label class='custom-radio-check'>
+                            <%= f.radio_button key.to_sym, false %>
+                            <span class='checkmark'></span>
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    <% end %>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
 
-          <div class="col-12 col-sm-6">
-            <div class="question-options">
-              <%= select_tag key, options_for_select(@options_hash[key]), class: 'form-control' %>
+            <div class='col-md-10 col-sm-11'>
+              <div class="space-between">
+                <%= f.submit 'Generate Report', class: "btn btn-main btn-large" %>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+       </div>
       </div>
-    <% end %>
-  </div>
-  <div class="submit-section">
-    <%= button_tag 'Generate Report', class: 'btn btn-lg btn-success' %>
+    </div>
   </div>
 </div>
