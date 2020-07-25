@@ -33,6 +33,20 @@ namespace :one_time_tasks do
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Residential')
     q.save
 
+    q = Question.new(text: 'The surrounding area the Western', category: 'source', sub_category: 'surrounding_area', view_type: 'dropdown')
+    q.save
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Industrial')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Residential')
+    q.save
+
+    q = Question.new(text: 'Underground Services', category: 'source', sub_category: 'underground_services', view_type: 'dropdown')
+    q.save
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Industrial')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Residential')
+    q.save
+
     q = Question.new(text: 'Buildings and other structures', category: 'source', sub_category: 'surrounding_area', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
@@ -45,49 +59,45 @@ namespace :one_time_tasks do
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
+
     q = Question.new(text: 'Previous mining activities', category: 'source', sub_category: 'mining_activity', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
-    q = Question.new(text: 'Radon', category: 'source', sub_category: 'radon', view_type: 'checkbox')
+    q = Question.new(text: 'Presence of Radon', category: 'source', sub_category: 'radon', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
-    q = Question.new(text: 'Invasive Plants', category: 'source', sub_category: 'invasice_species', view_type: 'checkbox')
+    q = Question.new(text: 'Flooding Zone', category: 'source', sub_category: 'flooding_zone', view_type: 'dropdown')
+    q.save
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Clean gravel')
+    q.save
+
+    q = Question.new(text: 'Invasive Weeds', category: 'source', sub_category: 'invasice_species', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
-    q = Question.new(text: 'Invasive Animals', category: 'source', sub_category: 'invasice_species', view_type: 'checkbox')
+    q = Question.new(text: 'Made ground', category: 'source', sub_category: 'made_ground', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
-    q = Question.new(text: 'Soil Type Layer 1', category: 'source', sub_category: 'made_ground', view_type: 'dropdown')
+
+    q = Question.new(text: 'Soil Type', category: 'pathway', sub_category: 'soil_type', view_type: 'dropdown')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Clean gravel')
     q.save
 
-    q = Question.new(text: 'Soil Type Layer 2', category: 'source', sub_category: 'made_ground', view_type: 'dropdown')
-    q.save
-    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
-    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Clean gravel')
-    q.save
-
-    q = Question.new(text: 'Soil Type Layer 3', category: 'source', sub_category: 'made_ground', view_type: 'dropdown')
-    q.save
-    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
-    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Clean gravel')
-    q.save
-
-    q = Question.new(text: 'Ground Water', category: 'pathway', sub_category: 'ground_water', view_type: 'checkbox')
+    q = Question.new(text: 'Sit hydrology ground Water', category: 'pathway', sub_category: 'ground_water', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
