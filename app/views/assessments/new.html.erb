@@ -1,4 +1,4 @@
-<h5 class="card-header info-color white-text text-center py-4">
+<h5 class="card-header info-color white-text text-center">
   <strong style='color:white'>NEW ASSESSMENT</strong>
 </h5>
 
@@ -15,20 +15,20 @@
                     <% if @options_hash[key][:type] == "dropdown" %>
                       <%= f.label key.to_sym, class: 'col-12 col-sm-5' %>
                       <div class="col-12 col-sm-7">
-                        <%= f.select(key.to_sym, @options_hash[key][:options], { include_blank: false }, { class: 'form-control'}) %>
+                        <%= f.select("assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].map { |obj| [obj[:text], obj[:id]] }, { include_blank: 'Select an option' }, { class: 'form-control', required: true }) %>
                       </div>
                     <% else %>
                       <%= f.label key.to_sym, class: 'col-sm-4' %>
                       <div class="col-md-8 col-sm-8 printer-view radio-question">
                         <label class='custom-radio-check'>
-                          <%= f.radio_button key.to_sym, true %>
+                          <%= f.radio_button "assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].first[:id], required: true %>
                           <span class='checkmark'></span>
                           Yes
                         </label>
 
                         <div class="radio-false">
                           <label class='custom-radio-check'>
-                            <%= f.radio_button key.to_sym, false %>
+                            <%= f.radio_button "assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].second[:id], required: true %>
                             <span class='checkmark'></span>
                             No
                           </label>

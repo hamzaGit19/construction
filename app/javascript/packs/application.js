@@ -10,6 +10,7 @@ require("channels")
 require('jquery')
 require("src/cocoon")
 require("@fortawesome/fontawesome-free/js/all")
+require("packs/assessment")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
