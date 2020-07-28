@@ -14,10 +14,3 @@ $roboto: Roboto;
     asset-url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
   }
 }
-
-@include fontFace('Roboto','Roboto-Regular');
-
-.Roboto-Regular {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}

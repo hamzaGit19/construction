@@ -58,12 +58,6 @@
   max-width: 25%
 }
 
-.questions-content {
-  background-color: #fff;
-  margin: 25px 0 20px;
-  padding-bottom: 20px;
-}
-
 .active-content {
   max-width: 650px;
   width: 100%;
@@ -96,7 +90,6 @@ body {
 body {
   color: $bodyTextClr;
   font-size: 14px;
-  @extend .Roboto-Regular;
 }
 
 [class*="col-"] {
@@ -121,7 +114,6 @@ hr {
 .btn-main {
   background: #0289C3 !important;
   font-size: 13px;
-  @extend .Roboto-Regular;
   color: $whiteClr !important;
   padding: 9px 20px;
   text-transform: uppercase;
@@ -168,7 +160,6 @@ label.custom-radio-check {
 }
 
 .content-area {
-  background-color: #fff;
   margin: 25px 0 20px;
   padding-bottom: 20px;
   .working-content-area {
@@ -239,7 +230,6 @@ label.custom-radio-check {
   font-size: 32px;
   padding-bottom: 20px;
   color: #0289C3;
-  @extend .Roboto-Regular;
   margin-bottom: 20px;
 }
 
@@ -271,6 +261,7 @@ label.custom-radio-check {
 th {
   color: #0289C3;
 }
+
 .card-header {
   margin-left: 25%;
   margin-top: 3%;
@@ -278,4 +269,59 @@ th {
   width: 50%;
   border-radius: 25px;
   background-image: linear-gradient(15deg, #06445f 0%, #0289C3 100%) !important;
+}
+
+.btn-tab {
+  width: 100%;
+  font-size: 13px !important;
+  background: #0289C3 !important;
+  border-radius: 20px !important;
+  margin-bottom: 5%;
+}
+
+.show-container {
+  margin-top: 1%
+}
+
+.category-row {
+  margin-bottom: 2%;
+}
+
+.category-col {
+  background: rgb(27, 58, 141);
+  padding: 1%;
+  border: inset;
+  color: white;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.option-image {
+  width: 70%
+}
+
+.shrink {
+  -webkit-transform:scale(0.8);
+  -moz-transform:scale(0.8);
+  -ms-transform:scale(0.8);
+  transform:scale(0.8);
+}
+
+.answer-card {
+  padding: 7rem !important;
+  min-height: 550px !important;
+  height: auto;
+  overflow: scroll;
+  max-height: 600px;
+}
+
+.answer-row {
+  font-weight: 400;
+  font-size: 25px;
+  font-family: sans-serif;
+  padding: 2%;
+}
+
+.card-body {
+  background: #eef3f6 !important;
 }

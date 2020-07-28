@@ -7,12 +7,14 @@ class AssessmentsController < ApplicationController
   def new; end
 
   def create
-    assessment = Assessment.new(report_data: params[:assessment][:report_data])
-    redirect_to '/' if assessment.save
+    assessment = Assessment.create(report_data: params[:assessment][:report_data])
+
+    return redirect_to assessment_path(assessment) if assessment.persisted?
+    render :new
   end
 
   def show
-    return unless @assessment
+    return redirect_to '/' unless @assessment
 
     @answers_hash = @assessment.category_answers_hash
   end

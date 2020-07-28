@@ -39,6 +39,16 @@ namespace :one_time_tasks do
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'No')
     q.save
 
+    q = Question.new(text: 'Underground Services', category: 'source', sub_category: 'Underground_services', view_type: 'dropdown')
+    q.save
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'All')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Water pipes and sewers')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Gas pipes')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Electricity cables')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Telecommunication cables')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
+    q.save
+
     q = Question.new(text: 'Storage of materials and old tanks', category: 'source', sub_category: 'storage_of_materials', view_type: 'checkbox')
     q.save
     q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Yes')

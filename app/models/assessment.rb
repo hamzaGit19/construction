@@ -1,4 +1,6 @@
 class Assessment < ApplicationRecord
+  validates_presence_of :report_data
+
   def category_answers_hash
     question_categories = Question.questions_category_hash
     categories = {}
@@ -16,13 +18,9 @@ class Assessment < ApplicationRecord
     answers = {}
 
     questions.each do |question|
-      question_id = obj.report_data[question[:id].to_s]
-      if question_id == "true" || question_id == "false"
-        answers[question[:text]] = { text: question_id == "true" ? "Yes" : "No" }
-      else
-        option = Option.find(question_id)
-        answers[question[:text]] = { text: option.text }
-      end
+      option_id = obj.report_data[question[:id].to_s]
+      option = Option.find(option_id)
+      answers[question[:text]] = { text: option.text, hazards: option.hazards, image: option.image, question_id: question[:id] }
     end
 
     answers

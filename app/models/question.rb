@@ -3,6 +3,7 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :options, allow_destroy: true
 
   scope :by_category, -> (category) { where(category: category) }
+  default_scope { order(created_at: :asc) }
 
   CATEGORIES = ["source", "pathway", "receptor"]
 
