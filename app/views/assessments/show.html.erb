@@ -43,19 +43,21 @@
                 <h5 class="card-header info-color white-text text-center">
                   <strong style='color:white'><%= question %></strong>
                 </h5>
-                <div class="row answer-row">
+                <div class="row answer-row selection">
                   You have picked &nbsp<strong style='color:black'><%= @answers_hash[category][question][:text] %></strong>
                 </div>
 
                 <% if @answers_hash[category][question][:text] == "All" %>
                   <% Question.find_by(id: @answers_hash[category][question][:question_id])&.options.each do |option| %>
-                    <div class="row answer-row">
-                      <%= option.hazards %>
-                    </div>
+                    <% if option.text != "None" && option.text != "All" %>
+                      <div class="row answer-row">
+                        <%= option.hazards %>
+                      </div>
 
-                    <div class="row mt-5">
-                      <%= image_tag(option.image.to_s, class: 'option-image') if option.image.present? %>
-                    </div>
+                      <div class="row mt-5">
+                        <%= image_tag(option.image.to_s, class: 'option-image') if option.image.present? %>
+                      </div>
+                    <% end %>
                   <% end %>
                 <% else %>
                   <div class="row answer-row">
