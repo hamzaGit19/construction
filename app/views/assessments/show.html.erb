@@ -25,7 +25,7 @@
         <% @answers_hash[category].keys.each_with_index do |question, question_index| %>
           <div class="row">
             <div class="col-md-12 <%= category %> category-btn">
-              <a class="btn btn-primary btn-tab question_<%= category_index %>_<%= question_index %>" data-toggle="collapse" href="#collapse-card" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <a class="button btn btn-primary btn-tab question_<%= category_index %>_<%= question_index %>" data-toggle="collapse" href="#collapse-card" role="button" aria-expanded="false" aria-controls="collapseExample">
                   <%= question %>
               </a>
             </div>
@@ -38,10 +38,13 @@
       <div class="collapse" id="collapse-card">
         <% @answers_hash.keys.each_with_index do |category, category_index| %>
           <% @answers_hash[category].keys.each_with_index do |question, question_index| %>
-            <div class="shadow-lg p-7 mb-7 bg-white rounded shrink">
+            <div class="shadow-lg p-7 mb-7 bg-white rounded ">
               <div class="card card-body answer_<%= category_index %>_<%= question_index %> d-none answers answer-card">
+                <h5 class="card-header info-color white-text text-center">
+                  <strong style='color:white'><%= question %></strong>
+                </h5>
                 <div class="row answer-row">
-                  <%= question %>:
+                  You have picked &nbsp<strong style='color:black'><%= @answers_hash[category][question][:text] %></strong>
                 </div>
 
                 <% if @answers_hash[category][question][:text] == "All" %>
