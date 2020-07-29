@@ -302,7 +302,8 @@ th {
 }
 
 .option-image {
-  width: 100%
+  width: 100%;
+  margin-bottom: 6%
 }
 
 .shrink {
@@ -313,7 +314,7 @@ th {
 }
 
 .answer-card {
-  padding: 7rem !important;
+  padding: 2rem !important;
   min-height: 550px !important;
   height: auto;
   overflow: scroll;
@@ -322,11 +323,16 @@ th {
 
 .answer-row {
   font-weight: 400;
-  font-size: 25px;
+  font-size: 20px;
   font-family: sans-serif;
   padding: 2%;
+  margin-bottom: -5%;
 }
 
 .card-body {
   background: #eef3f6 !important;
+}
+
+.selection {
+  margin-bottom: 0 !important;
 }
