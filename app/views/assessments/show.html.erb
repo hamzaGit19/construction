@@ -45,6 +45,10 @@
                 </h5>
                 <div class="row answer-row selection">
                   You have picked &nbsp<strong style='color:black'><%= @answers_hash[category][question][:text] %></strong>
+                  <% if @answers_hash[category][question][:text] == "All" %>
+                    <% opts = Question.find_by(id: @answers_hash[category][question][:question_id])&.options.pluck(:text) - ['All', 'None'] %>
+                    <strong>(<%= opts.join(", ") %>)</strong>
+                  <% end %>
                 </div>
 
                 <% if @answers_hash[category][question][:text] == "All" %>
