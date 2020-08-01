@@ -11,9 +11,18 @@
           <li class="<%=is_active('new', 'assessments')%> nav-item">
               <a class="nav-link" href="/assessments/new"><i class="far fa-address-book"></i>New Assessment</a>
           </li>
-          <li class="<%=is_active('index', 'questions')%> nav-item">
-              <a class="nav-link" href="/questions"><i class="fa fa-cogs"></i>Manage Questions</a>
-          </li>
+          <% if !current_user %>
+            <li class="<%=is_active('new', 'devise/sessions')%> nav-item">
+                <a class="nav-link" href="/users/sign_in"><i class="fa fa-user"></i>Log in</a>
+            </li>
+          <% else %>
+            <li class="<%=is_active('index', 'questions')%> nav-item">
+                <a class="nav-link" href="/questions"><i class="fa fa-cogs"></i>Manage Questions</a>
+            </li>
+            <li class="<%=is_active('index', 'questions')%> nav-item">
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            </li>
+          <% end %>
       </ul>
   </div>
 </nav>
