@@ -1,0 +1,54 @@
+<h5 class="card-header info-color white-text text-center">
+  <strong style='color:white'>NEW ASSESSMENT</strong>
+</h5>
+
+<div class="container">
+  <div class="questions-area">
+    <div class="row">
+      <div class='col-xs-12 content-area'>
+        <div class="working-content-area">
+          <%= form_with url: assessments_path, method: :post do |f| %>
+            <% @options_hash.keys.each do |key| %>
+              <div class="form-group">
+                <div class="row">
+                  <div class="question-block">
+                    <% if @options_hash[key][:type] == "dropdown" %>
+                      <%= f.label key.to_sym, class: 'col-12 col-sm-5' %>
+                      <div class="col-12 col-sm-7">
+                        <%= f.select("assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].map { |obj| [obj[:text], obj[:id]] }, { include_blank: 'Select an option' }, { class: 'form-control', required: true }) %>
+                      </div>
+                    <% else %>
+                      <%= f.label key.to_sym, class: 'col-sm-4' %>
+                      <div class="col-md-8 col-sm-8 printer-view radio-question">
+                        <label class='custom-radio-check'>
+                          <%= f.radio_button "assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].first[:id], required: true %>
+                          <span class='checkmark'></span>
+                          Yes
+                        </label>
+
+                        <div class="radio-false">
+                          <label class='custom-radio-check'>
+                            <%= f.radio_button "assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].second[:id], required: true %>
+                            <span class='checkmark'></span>
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    <% end %>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+            <div class='col-md-10 col-sm-11'>
+              <div class="space-between">
+                <%= f.submit 'Generate Report', class: "btn btn-main btn-large" %>
+              </div>
+            </div>
+          <% end %>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>

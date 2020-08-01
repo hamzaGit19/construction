@@ -1,3 +1,41 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.button {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: rgb(6, 68, 95) !important;
+  padding: 1em 2em;
+  border: none;
+  color: white !important;
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.button span {
+  position: relative;
+  pointer-events: none;
+}
+.button::before {
+  --size: 0 !important;
+  content: '' !important;
+  position: absolute !important;
+  left: var(--x) !important;
+  top: var(--y) !important;
+  width: var(--size) !important;
+  height: var(--size) !important;
+  background: radial-gradient(circle closest-side,#0289C3, transparent) !important;
+  -webkit-transform: translate(-60%, -60%) !important;
+          transform: translate(-60%, -60%) !important;
+  transition: width .2s ease, height .2s ease !important;
+}
+.button:hover::before {
+  --size: 400px !important;
+}
+nav > input {
+  color: green !important;
+}

@@ -1,0 +1,30 @@
+<div class='nested-fields'>
+  <%= f.inputs do %>
+    <div class='row'>
+      <div class="col">
+        <div class="float-right">
+            <%= link_to_remove_association button_tag('x', type: "button", class: 'remove-option'), f %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="text">Option name:</label>
+      <%= f.text_field :text, :class =>'form-control', id: 'text'%>
+    </div>
+    <div class="form-group">
+      <label for="email">Description:</label>
+      <%= f.text_area :hazards, :class =>'form-control', cols:"25", rows:"10"%>
+    </div>
+    <div class="form-group">
+        <% if f.object.image.to_s.empty? %>
+          <label for="email">Image:</label>
+          <%= f.file_field :image, label: "Upload a founder photo.", class: 'form-control' %>
+        <% else %>
+          <label for="email">Replace image:</label>
+          <%= f.file_field :image, label: "Upload a founder photo.", class: 'form-control' %>
+          <%= image_tag f.object.image.to_s, accept: 'image/png, image/jpeg', style: 'height:50%;width:50%; margin: 3%; margin-left:25%;', class: 'form-control'%>
+        <% end %>
+    </div>
+  <% end %>
+</div>

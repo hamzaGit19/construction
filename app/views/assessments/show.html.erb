@@ -1,0 +1,82 @@
+<div class="container show-container">
+  <div class="row category-row">
+    <div class="col-2 col-sm-2">
+    </div>
+
+    <div class="col-2 col-sm-2 category-col" data-category="source">
+      Source
+    </div>
+
+    <div class="col-2 col-sm-2 category-col" data-category="pathway">
+      Pathway
+    </div>
+
+    <div class="col-2 col-sm-2 category-col" data-category="receptor">
+      Receptor
+    </div>
+
+    <div class="col col-sm">
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="col-3 col-md-3">
+      <% @answers_hash.keys.each_with_index do |category, category_index| %>
+        <% @answers_hash[category].keys.each_with_index do |question, question_index| %>
+          <div class="row">
+            <div class="col-md-12 <%= category %> category-btn">
+              <a class="button btn btn-primary btn-tab question_<%= category_index %>_<%= question_index %>" data-toggle="collapse" href="#collapse-card" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <%= question %>
+              </a>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-9 col-md-9">
+      <div class="collapse" id="collapse-card">
+        <% @answers_hash.keys.each_with_index do |category, category_index| %>
+          <% @answers_hash[category].keys.each_with_index do |question, question_index| %>
+            <div class="shadow-lg p-7 mb-7 bg-white rounded ">
+              <div class="card card-body answer_<%= category_index %>_<%= question_index %> d-none answers answer-card">
+                <h5 class="card-header info-color white-text text-center">
+                  <strong style='color:white'><%= question %></strong>
+                </h5>
+                <div class="row answer-row selection">
+                  You have picked &nbsp<strong style='color:black'><%= @answers_hash[category][question][:text] %></strong>
+                  <% if @answers_hash[category][question][:text] == "All" %>
+                    <% opts = Question.find_by(id: @answers_hash[category][question][:question_id])&.options.pluck(:text) - ['All', 'None'] %>
+                    <strong>(<%= opts.join(", ") %>)</strong>
+                  <% end %>
+                </div>
+
+                <% if @answers_hash[category][question][:text] == "All" %>
+                  <% Question.find_by(id: @answers_hash[category][question][:question_id])&.options.each do |option| %>
+                    <% if option.text != "None" && option.text != "All" %>
+                      <div class="row answer-row">
+                        <%= option.hazards %>
+                      </div>
+
+                      <div class="row mt-5">
+                        <%= image_tag(option.image.to_s, class: 'option-image') if option.image.present? %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <div class="row answer-row">
+                    <%= @answers_hash[category][question][:hazards] %>
+                  </div>
+
+                  <div class="row mt-5">
+                    <%= image_tag(@answers_hash[category][question][:image].to_s, class: 'option-image') if @answers_hash[category][question][:image].present? %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
