@@ -1,3 +1,6 @@
+.answer-sec {
+margin-bottom: 20%;
+}
 .row-content {
   padding: 10px 0px 50px 0px;
   background: #0289C3;
@@ -332,7 +335,7 @@ th {
   padding: 2rem !important;
   min-height: 550px !important;
   height: auto;
-  overflow: scroll;
+  // overflow: scroll;
   max-height: 600px;
 }
 
@@ -345,9 +348,12 @@ th {
 }
 
 .card-body {
-  background: #eef3f6 !important;
+  // background: #eef3f6 !important;
 }
 
 .selection {
   margin-bottom: 0 !important;
+}
+.card {
+
 }
