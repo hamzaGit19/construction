@@ -123,7 +123,10 @@ hr {
   border-bottom: 3px solid #337ab7;
 }
 .btn-large {
+  background-color: green !important;
   padding: 13px 60px;
+  float: right;
+  margin-left: 5% !important;
 }
 .btn-main:hover,
 .btn-main:focus,
@@ -252,6 +255,18 @@ label.custom-radio-check {
   label {
     font-size: 11px;
   }
+  .normal-label {
+    background: #0a0765;
+    color: white;
+    padding: 3px;
+    // padding-left: 5%;
+    // padding-top: 1.1%;
+    font-size: 12px;
+    // border-radius: 25px;
+    text-align: center;
+    width: 24em !important;
+    // height: 3.1em;
+  }
 }
 
 .questions-area {
@@ -263,10 +278,10 @@ th {
 }
 
 .card-header {
-  margin-left: 25%;
+  margin-left: 40%;
   margin-top: 3%;
   margin-bottom: 3% !important;
-  width: 50%;
+  width: 30%;
   border-radius: 25px;
   background-image: linear-gradient(15deg, #06445f 0%, #0289C3 100%) !important;
 }

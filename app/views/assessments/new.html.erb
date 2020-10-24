@@ -13,13 +13,13 @@
                 <div class="row">
                   <div class="question-block">
                     <% if @options_hash[key][:type] == "dropdown" %>
-                      <%= f.label key.to_sym, class: 'col-12 col-sm-5' %>
+                      <%= f.label key.to_sym, class: 'col-12 col-sm-5 normal-label' %>
                       <div class="col-12 col-sm-7">
                         <%= f.select("assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].map { |obj| [obj[:text], obj[:id]] }, { include_blank: 'Select an option' }, { class: 'form-control', required: true }) %>
                       </div>
                     <% else %>
-                      <%= f.label key.to_sym, class: 'col-sm-4' %>
-                      <div class="col-md-8 col-sm-8 printer-view radio-question">
+                      <%= f.label key.to_sym, class: 'col-sm-5 normal-label' %>
+                      <div class="col-md-7 col-sm-7 printer-view radio-question">
                         <label class='custom-radio-check'>
                           <%= f.radio_button "assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].first[:id], required: true %>
                           <span class='checkmark'></span>
@@ -41,7 +41,7 @@
               </div>
             <% end %>
 
-            <div class='col-md-10 col-sm-11'>
+            <div class='col-md-12 col-sm-11'>
               <div class="space-between">
                 <%= f.submit 'Generate Report', class: "btn btn-main btn-large" %>
               </div>
