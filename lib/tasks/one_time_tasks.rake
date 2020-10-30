@@ -139,4 +139,16 @@ namespace :one_time_tasks do
     u = User.new(email: 'admin_user@construction.com', password:'Password123#', password_confirmation:'Password123#')
     u.save!
   end
+
+  task presentation_task: :environment do
+    q = Question.where(text: 'Site Topography').first
+    q.view_type = 'dropdown'
+    q.save!
+    q = Question.new(text: 'Building materials', category: 'receptor', sub_category: 'build_mat', view_type: 'dropdown')
+    q.save
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'None')
+    q.options.create(hazards: 'There will be a long paragraph here. Remove me, and fill me again please.', text: 'Clean gravel')
+    q.save
+    puts 'Done'
+  end
 end

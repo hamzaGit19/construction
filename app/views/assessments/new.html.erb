@@ -15,7 +15,7 @@
                     <% if @options_hash[key][:type] == "dropdown" %>
                       <%= f.label key.to_sym, class: 'col-12 col-sm-5 normal-label' %>
                       <div class="col-12 col-sm-7">
-                        <%= f.select("assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].map { |obj| [obj[:text], obj[:id]] }, { include_blank: 'Select an option' }, { class: 'form-control', required: true }) %>
+                        <%= f.select("assessment[report_data][#{@options_hash[key][:id]}]", @options_hash[key][:options].map { |obj| [obj[:text], obj[:id]] }, { include_blank: 'Select an option' }, { class: 'form-control my-select', required: true }) %>
                       </div>
                     <% else %>
                       <%= f.label key.to_sym, class: 'col-sm-5 normal-label' %>

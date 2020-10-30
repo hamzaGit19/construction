@@ -253,21 +253,26 @@ label.custom-radio-check {
   }
 }
 
+.my-select {
+  margin-top: 9px;
+}
 .question-block {
   display: contents;
   label {
-    font-size: 11px;
+    font-size: 110%;
   }
   .normal-label {
+    margin-bottom: -0.2%;
     background: #0a0765;
     color: white;
-    padding: 3px;
+    padding: 1%;
+    padding-top: 1.5%;
     // padding-left: 5%;
     // padding-top: 1.1%;
-    font-size: 12px;
+    font-size: 80%;
     // border-radius: 25px;
     text-align: center;
-    width: 24em !important;
+    width: 30em !important;
     // height: 3.1em;
   }
 }
